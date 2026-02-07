@@ -28,7 +28,7 @@ END
     LAF autotra_workaround END
 
 
-//  ACTION_DEFINE_ARRAY fl#noconvert BEGIN END
+  ACTION_DEFINE_ARRAY fl#noconvert BEGIN install END
 
  ACTION_DEFINE_ARRAY fl#reload BEGIN setup END
 
@@ -37,7 +37,7 @@ END
         infer_charsets = 1
       STR_VAR
         tra_path = EVAL ~ChaosKnight/Language/autotra~
-//        noconvert_array = fl#noconvert
+        noconvert_array = fl#noconvert
         reload_array = fl#reload
  END
 END
@@ -47,6 +47,8 @@ AUTO_TRA ~ChaosKnight/Language/autotra/%LANGUAGE%/D~
 LANGUAGE ~Korean~ ~korean~ ~ChaosKnight/Language/korean/setup.tra~
 LANGUAGE ~English~ ~english~ ~ChaosKnight/Language/english/setup.tra~
 LANGUAGE ~French~ ~french~ ~ChaosKnight/Language/french/setup.tra~
+LANGUAGE ~Chinese~ ~schinese~ ~ChaosKnight/Language/schinese/install.tra~
+
 
 BEGIN @0 /* Install the Chaos Knight Kit for BGT, BGEE, BG2EE, IWDEE or EET and Jacob, Npc pour BGT, BGEE ou EET */
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet bgt iwdee~) @200 /*ChaosKnight must be installed on BGT, BGEE, BG2EE, IWDEE or EET*/
