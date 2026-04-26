@@ -1,8 +1,20 @@
 # Askaria Npc and Quest & ChaosKnight Kit and Npc 
 
-![Language](https://img.shields.io/static/v1?label=language&message=english%20%7C%20korean%20%7C%20french%20%7C%20&color=informational)
+[![Release](https://img.shields.io/github/v/release/The-Gate-Project/Askaria-Quest_ChaosKnight-kit?include_prereleases&color=41788a)](https://github.com/The-Gate-Project/Askaria-Quest_ChaosKnight-kit/releases)
+[![Published](https://img.shields.io/github/release-date-pre/The-Gate-Project/Askaria-Quest_ChaosKnight-kit?display_date=published_at&label=published&color=014a69)](https://github.com/The-Gate-Project/Askaria-Quest_ChaosKnight-kit/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/The-Gate-Project/Askaria-Quest_ChaosKnight-kit/total?color=41788a)](https://github.com/The-Gate-Project/Askaria-Quest_ChaosKnight-kit/releases)
 
-**Autor** : ****
+[![Language](https://img.shields.io/badge/language-english%20%7C%20korean%20%7C%20french-014a69)](https://github.com/The-Gate-Project/Askaria-Quest_ChaosKnight-kit/releases)
+[![Games](https://img.shields.io/badge/games-BGT%20%a0%20BG%3AEE%20%a0%20EET-41788a)](https://github.com/The-Gate-Project/Askaria-Quest_ChaosKnight-kit/releases)
+
+<!--
+
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FThe-Gate-Project%2FAskaria-Quest_ChaosKnight-kit&countColor=41788a&style=flat)
+
+[![Platform](https://img.shields.io/badge/platform-Windows%20%a0%20macOS%20%a0%20Linux%20%a0%20Project%20Infinity-014a69)](https://github.com/The-Gate-Project/Askaria-Quest_ChaosKnight-kit/releases)
+-->
+
+**Author** : ****
 
 [Link to original Mod Forum](http://www.shsforums.net/topic/51321-askaria-quest-chaosknight-kit-mod-v13/)
 

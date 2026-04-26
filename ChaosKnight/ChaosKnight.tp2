@@ -1,4 +1,4 @@
-BACKUP ~ChaosKnight/backup~
+BACKUP ~weidu_external/ChaosKnight/backup~
 AUTHOR ~drizztdd@naver.com~
 README ~Askaria/Readmes/Readme.%LANGUAGE%.txt~ ~Askaria/Readmes/readme.English.txt~
 
@@ -132,9 +132,8 @@ OUTER_SET use_him = RESOLVE_STR_REF (@4)
 OUTER_SET use_it = RESOLVE_STR_REF (@203)
 APPEND ~ITEM_USE.2DA~ ~zychmace   ZYJCOB      %use_it%      2          %use_him%~ UNLESS ~zychmace~ 
 	
-END ELSE BEGIN 
+END ELSE ACTION_IF (GAME_IS ~bgt~ AND MOD_IS_INSTALLED ~SETUP-TOBEX.TP2~ ~100~) BEGIN
 
-ACTION_IF (GAME_IS ~bgt~ AND MOD_IS_INSTALLED ~SETUP-TOBEX.TP2~ ~100~) BEGIN
 PRINT ~Bgt item description~
 PRINT ~   ~
 PRINT ~Tobex is Installed~
@@ -151,9 +150,8 @@ COPY ~ChaosKnight/ITM/zychmace.itm~ ~override~
 OUTER_SET use_it = RESOLVE_STR_REF (@203)
 APPEND ~ITEM_USE.2DA~ ~zychmace   ZYJCOB      -1      2          %use_it%~ UNLESS ~zychmace~
 	
-END ELSE BEGIN 
+END ELSE ACTION_IF (GAME_IS ~bgt~ AND NOT MOD_IS_INSTALLED ~SETUP-TOBEX.TP2~ ~100~) BEGIN
 
-ACTION_IF (GAME_IS ~bgt~ AND NOT MOD_IS_INSTALLED ~SETUP-TOBEX.TP2~ ~100~) BEGIN
 PRINT ~Tobex is not Installed~
 PRINT ~zychmace.itm restriction need Tobex for BGT~
 PRINT ~zychmace.itm will not be restricted to Jacob only~
@@ -166,8 +164,6 @@ COPY ~ChaosKnight/ITM/zychmace.itm~ ~override~
   WRITE_ASCII 0x3A ~zychmace~ (8)    // Write bam to item (second offset Bam for use (displayed in action bar)) 
   WRITE_ASCII 0x76 ~zychmace~ (8)    // Write bam to item (second offset Bam for use (displayed in action bar)) 
 
-  END
- END
 END
 
 // Portraits
@@ -207,14 +203,14 @@ PRINT ~              ~
 	PRINT ~APPEND pdialog.2da for EET~
 PRINT ~              ~
   APPEND ~PDIALOG.2DA~
-~ZYJCOB       ZYJCOBP             ZYJCOBJ            ***            ***                ***                ***                 ***~
+~ZYJCOB                 ZYJCOBP                 ZYJCOBJ                 ***                 ***                 ***                 ***                 ***~
     UNLESS ~ZYJCOB~
 END ELSE ACTION_IF (GAME_IS ~bgee bgt~) BEGIN
 PRINT ~              ~
 	PRINT ~APPEND pdialog.2da for BGEE or BGT~
 PRINT ~              ~
   APPEND ~pdialog.2da~ 
-~ZYJCOB       ZYJCOBP             ZYJCOBJ            ***~
+~ZYJCOB                 ZYJCOBP                 ZYJCOBJ                 ***~
     UNLESS ~ZYJCOB~
 END
 
@@ -225,11 +221,11 @@ INT_VAR
   mixed     = RESOLVE_STR_REF(@2)
   help      = RESOLVE_STR_REF(@3)
   briefdesc = RESOLVE_STR_REF(@3)
+  //biography = ....... // (optional, EE-only) The biography strref of your kit, added to clastext.2da.
 STR_VAR
   kit_name  = ~CHAOSK~
   unusable  = ~0x04000000~ //kitlist.2da의 unusable 과 class 영역, 이건 새로 만들수없고 여기 있는것 중에서 골라야오류가 안난답니다. 키트별로 아머착용제한 설정 // unusable kit_class
   hpclass   = ~HPWAR~
-  //biography = ....... // (optional, EE-only) The biography strref of your kit, added to clastext.2da.
   clasweap  = ~1 1 1 0 0 1 1 1~ //clasweap 8가지무기타입 사용가능설정. // clasweap
   weapprof  = ~2 2 0 2 5 5 2 0 2 2 2 2 2 2 2 2 2 5 2 2 5 5 2 0 0 0 0 0 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~ //WEAPPROF 무기 숙련도 설정.
   abclasrq  = ~9 3 9 3 3 3~ //최소 능력치 str dex con int wis chr. // abclasrq

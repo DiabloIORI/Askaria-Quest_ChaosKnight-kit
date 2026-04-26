@@ -218,7 +218,7 @@ COPY ~Askaria/CRE/zya#tmo.cre~ ~override~
 COPY_EXISTING ~GORGUA05.cre~ ~override/zyjoswor.cre~
   SAY NAME1 @298
   SAY NAME2 @298
-  WRITE_SHORT 0x14 5250 // XP for killing
+  WRITE_LONG 0x14 5250 // XP for killing
   WRITE_SHORT 0x24 100 // Current HP
   WRITE_SHORT 0x26 100 // Maximum HP
   WRITE_LONG 0x28 0x5110  // Animation
@@ -232,7 +232,7 @@ COPY_EXISTING ~GORGUA05.cre~ ~override/zyjoswor.cre~
   WRITE_BYTE 0x237 2  // Sex  
   //WRITE_BYTE 0x238 18  // Force 
   WRITE_ASCII 0x248 ~zyjoswor~ (8)  // script override  
-  WRITE_ASCII 0x280 ~zyjoswor~ (8)  // Script name 
+  WRITE_ASCII 0x280 ~zyjoswor~ (32)  // Script name 
   REMOVE_CRE_ITEM ~GHOST3~
   REMOVE_CRE_ITEM ~RING95~ ~lring~
   REMOVE_CRE_ITEM ~PLAT16~ ~armor~
@@ -364,7 +364,7 @@ COPY ~Askaria/ITM/zyjoswor.itm~ ~override~
   WRITE_ASCII 0x3A ~zyjoswor~ (8)    // Write bam to item (first offset) 
   WRITE_ASCII 0x76 ~zyjoswor~ (8)    // Write bam to item (second offset Bam for use (displayed in action bar)) 
     OUTER_SET ability2strref = RESOLVE_STR_REF (@299)
-    APPEND ~tooltip.2da~ ~zyjoswor    -1    %ability2strref%~
+    APPEND ~tooltip.2da~ ~zyjoswor    -1    %ability2strref%       -1~
 END ELSE BEGIN
 PRINT ~              ~
 PRINT ~EE Descriptions for Zyaska ring~
@@ -377,7 +377,7 @@ COPY ~Askaria/ITM/zyjoswor.itm~ ~override~
   WRITE_ASCII 0x3A ~zyjoswor~ (8)    // Write bam to item (first offset) 
   WRITE_ASCII 0x76 ~zyjoswor~ (8)    // Write bam to item (second offset Bam for use (displayed in action bar)) 
     OUTER_SET ability2strref = RESOLVE_STR_REF (@299)
-    APPEND ~tooltip.2da~ ~zyjoswor    -1    %ability2strref%~
+    APPEND ~tooltip.2da~ ~zyjoswor    -1    %ability2strref%       -1~
 END
 
 
@@ -426,12 +426,12 @@ ACTION_IF (GAME_IS ~eet~) BEGIN
 PRINT ~              ~
 	PRINT ~APPEND pdialog.2da for EET~
 PRINT ~              ~
-  APPEND ~pdialog.2da~ ~ZYASKA       ZYASKAP             ZYASKAJ            ***            ***                ***                ***                 ***~
+  APPEND ~pdialog.2da~ ~ZYASKA                 ZYASKAP                 ZYASKAJ                 ***                 ***                 ***                 ***                 ***~
     UNLESS ~ZYASKA~
 END ELSE BEGIN // bgee bgt in this case (other exemple in ChaosKnight)
 PRINT ~              ~
 	PRINT ~APPEND pdialog.2da for BGEE or BGT~
 PRINT ~              ~
-  APPEND ~pdialog.2da~ ~ZYASKA       ZYASKAP             ZYASKAJ            ***~
+  APPEND ~pdialog.2da~ ~ZYASKA                 ZYASKAP                 ZYASKAJ                 ***~
     UNLESS ~ZYASKA~
 END
